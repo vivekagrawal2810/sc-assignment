@@ -1,0 +1,19 @@
+{
+    "1.1": {
+        "description": "Ensure GCP storage buckets have default encryption enabled",
+        "service": "Storage",
+        "check_function": "check_bucket_encryption"
+    },
+   
+    "1.2": {
+        "description": "Ensure GCP storage buckets are not publicly accessible",
+        "service": "Storage",
+        "check_function": "check_public_access"
+    },
+    "1.3": {
+        "description": "Ensure that cardholder data is properly erased when it is no longer required",
+        "service": "Storage",
+        "check_function": "check_secure_data_deletion"
+    }
+
+}

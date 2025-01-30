@@ -1,0 +1,44 @@
+Assumptions:
+
+
+1.  All open source components are only used to develop this tool. 
+2. Very high level GCP cloud sdk analysis done.
+3. For GCP Asset Discovery , the scope starts from ProjectId as input.
+4. For consuming GCP Asset API ,its relevant service needs to be enabled in the cloud account.
+5. GCP Service Account was already created with minimal permissions required.
+6. Script only configured for GCP vendor.
+7.  Python is assumed to be default language for everything like scans and visualisation ( HTML , CSS exists for styling )
+8.  Security standards rule check and vendor specific module functions mapping are in JSON format.
+9.  Few rules are configured for CIS and PCI DSS standard.
+10.  Scan results are output as JSON ( can vary as per the visualisation or reporting tool )
+11.  No storage repository configured for scan results.
+12.  Local environmental or design issues persists due to which few workarounds are made.
+13.  Secrets are kept in local files only.
+14.  Due to time constraints few pieces of code are not connected
+15.  Script can run in the background jobs. 
+16.  Cloud latest sdks are installed locally.
+17.  Dash app is run locally, needs to be hosted in server environment or cloud environment.
+18.  Cost analysis is not done for each vendor run. 
+19. Logging is done on shared log file and console.
+
+
+
+
+Areas of improvements
+
+
+1.  Assets discovery module needs to communicate with compliance module as initial data feeder and Compliance module design needs to adapt this change.
+2.  Cloud APIs needs to be lazy loaded wherever supported in API to reduce burden on memory.
+3. Github Actions can be used to push the new versions of code to a repository where it is tagged to a version number with proper access control.
+4.  Scripts can be loaded from versioned repository as specified above and can run as Github Action jobs or using other workflow tools like Jenkins and security compliance standards can be injected at run time and vendor name injected at runtime.   Separate scan jobs can be triggered to run for each vendor.
+5.  Visualisation technology can be chosen as per the company standards like open source Grafana  can also be used , but there features which may be missing.
+6.  Logging enhancement to trace the issues faster.
+7.  Secrets should go in Vaults
+8.  Asset Discovery module design can be adjusted to support hierarchal structure of Cloud Assets. 
+9.  Using decorators @dataclass for class definitions at all places
+10.  Move the Compliance rules outside of the main codebase into separate repository like  with proper versioning. 
+11.  Segregate the checks function to its sub-modules in vendor specific folder compliance to make it more clean.
+12.  Add the logic to handle the assets for which the permission is not granted to service accounts.
+ 
+
+

@@ -1,0 +1,22 @@
+{
+    "1.1": {
+        "description": "Ensure no public roles are assigned to GCP IAM resources (e.g., roles assigned to allUsers or allAuthenticatedUsers)",
+        "service": "IAM",
+        "check_function": "check_public_access"
+    },
+    "1.2": {
+        "description": "Ensure required IAM roles are assigned to GCP resources, such as roles/owner, roles/editor, etc.",
+        "service": "IAM",
+        "check_function": "check_required_roles_assigned"
+    },
+    "1.3": {
+        "description": "Ensure service account keys are properly managed, with no unmanaged or unused keys present",
+        "service": "IAM",
+        "check_function": "check_service_account_keys"
+    },
+    "1.4": {
+        "description": "Ensure IAM policy changes are tracked to maintain visibility of role assignments and access controls",
+        "service": "IAM",
+        "check_function": "check_iam_policy_changes"
+    }
+}

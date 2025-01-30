@@ -1,0 +1,60 @@
+{
+    "pci_dss": {
+        "gcp": {
+            "scan_id": "d567eb08-e7cd-46cd-a114-85b1ba1bb7a2",
+            "scan_date_utc": "2025-01-30 11:03:55 UTC+0000",
+            "scan_results": [
+                {
+                    "rule_id": "1.1",
+                    "rule_description": "Ensure GCP storage buckets have default encryption enabled",
+                    "status": "PASS",
+                    "message": "All buckets are encrypted"
+                },
+                {
+                    "rule_id": "1.2",
+                    "rule_description": "Ensure GCP storage buckets are not publicly accessible",
+                    "status": "PASS",
+                    "message": "No buckets are publicly accessible"
+                },
+                {
+                    "rule_id": "1.3",
+                    "rule_description": "Ensure that cardholder data is properly erased when it is no longer required",
+                    "status": "FAIL",
+                    "message": "Buckets not configured for secure data deletion: demo_bkt"
+                }
+            ]
+        }
+    },
+    "cis": {
+        "gcp": {
+            "scan_id": "d567eb08-e7cd-46cd-a114-85b1ba1bb7a2",
+            "scan_date_utc": "2025-01-30 11:03:55 UTC+0000",
+            "scan_results": [
+                {
+                    "rule_id": "1.1",
+                    "rule_description": "Ensure no public roles are assigned to GCP IAM resources (e.g., roles assigned to allUsers or allAuthenticatedUsers)",
+                    "status": "PASS",
+                    "message": "No buckets are publicly accessible"
+                },
+                {
+                    "rule_id": "1.2",
+                    "rule_description": "Ensure required IAM roles are assigned to GCP resources, such as roles/owner, roles/editor, etc.",
+                    "status": "FAIL",
+                    "message": "Check function check_required_roles_assigned not implemented"
+                },
+                {
+                    "rule_id": "1.3",
+                    "rule_description": "Ensure service account keys are properly managed, with no unmanaged or unused keys present",
+                    "status": "FAIL",
+                    "message": "Check function check_service_account_keys not implemented"
+                },
+                {
+                    "rule_id": "1.4",
+                    "rule_description": "Ensure IAM policy changes are tracked to maintain visibility of role assignments and access controls",
+                    "status": "FAIL",
+                    "message": "Check function check_iam_policy_changes not implemented"
+                }
+            ]
+        }
+    }
+}
